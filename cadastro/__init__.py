@@ -14,6 +14,10 @@ def cadastrar(usuarios):
             print("Preencha todos os campos.")
             continue
 
+        while len(nome) < 3 or not nome.isalpha():
+            print("O nome deve ter pelo menos 3 caracteres e só pode conter letras!")
+            nome = input("Digite seu nome: ").strip().lower()
+
         while "@" not in email or "." not in email:
             print("Seu email não possui @ ou .")
             email = input("Digite seu email: ").strip().lower()
@@ -38,7 +42,7 @@ def cadastrar(usuarios):
         if(pergunta == "sim"):
             continue
         elif(pergunta == "nao" or pergunta == "não"):
-            break;
+            break
         else:
             while pergunta != "sim" and pergunta != "nao" and pergunta != "não":
                 print("Digite sim ou não!")

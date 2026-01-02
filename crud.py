@@ -1,4 +1,7 @@
-from funcoes import *
+from cadastro import *
+from login import *
+from logout import *
+usuario_logado = None
 num = 0
 while num == 0:
 
@@ -15,9 +18,9 @@ while num == 0:
     elif(operacao == "1"):
         cadastrar(usuarios);
     elif (operacao == "2"):
-        'login()'
+        usuario_logado = (verificar_logado(usuario_logado,usuarios))
     elif (operacao == "3"):
-        'logout()'
+        usuario_logado = logout(usuario_logado)
     elif (operacao == "4"):
         print(usuarios)
     elif (operacao == "5"):
